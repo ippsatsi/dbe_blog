@@ -13,4 +13,22 @@
         Comparte este post
     </a>
 </p>
+{% with comments.count as total_comments %}
+<h2>
+    {{ total_comments }} comentario{{ total_comments|pluralize }}
+</h2>
+    
+{% endwith %}
+{% for comment in comments %}
+<div class="comment">
+    <p class="info">
+        Comentario {{ forloop.counter }} por {{ comment.name }}
+        {{ comment.created }}
+    </p>
+    {{ comment.body|linebreaks }}
+</div>
+{% empty %}
+<p>No hay comentarios</p>
+{% endfor %}
+{% include "blog/post/includes/comment_form.html" %}
 {% endblock content %}

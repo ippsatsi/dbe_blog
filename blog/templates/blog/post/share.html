@@ -10,7 +10,7 @@
         </p>
     {% else %}
         <h1>Comparte "{{post.title }}" por email</h1>
-        <form method="post">
+        <form method="post" novalidate>
             {{ form.as_p }}
             {% csrf_token %}
             <input type="submit" value="Enviar email">
