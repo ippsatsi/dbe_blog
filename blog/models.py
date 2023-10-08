@@ -3,6 +3,7 @@ from django.db.models.query import QuerySet
 from django.utils import timezone
 from django.contrib.auth.models import User
 from django.urls import reverse
+from taggit.managers import TaggableManager
 
 # Create your models here.
 class PublishedManager(models.Manager):
@@ -30,6 +31,8 @@ class Post(models.Model):
     status = models.CharField(max_length=2,
                               choices=Status.choices, 
                               default=Status.DRAFT)
+    
+    tags = TaggableManager()
     
     objects = models.Manager() # default manager
     published = PublishedManager() #Our custom manager
