@@ -17,9 +17,13 @@
         </div>
         <div id='sidebar'>
             <h2>My blog</h2>
-            <p>this is my blog
+            <p>this is my blog.
                 Yo he escrito {% total_posts %} hasta ahora
             </p>
+            <h3>
+                Ultimos posts
+            </h3>
+            {% show_latest_posts 3 %}
         </div>
 
     </body>
