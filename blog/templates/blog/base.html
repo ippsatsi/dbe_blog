@@ -20,6 +20,12 @@
             <p>this is my blog.
                 Yo he escrito {% total_posts %} hasta ahora
             </p>
+            <p>
+                <a href="{% url "blog:post_feed" %}">
+                    Suscribase a mi RSS feed
+                </a>
+                
+            </p>
             <h3>
                 Ultimos posts
             </h3>
